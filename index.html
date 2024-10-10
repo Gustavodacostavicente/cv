@@ -1,39 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CV-Gustavo da Costa Vicente</title>
-  <style>
-    #pdf-viewer {
-      width: 100%;
-      height: 100vh; /* Ajusta a altura para ocupar a tela inteira */
-    }
-  </style>
+  <title>CV - Gustavo da Costa Vicente</title>
 </head>
 <body>
-  <canvas id="pdf-viewer"></canvas>
-  
-  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-  <script>
-    const url = 'CV - Gustavo da Costa Vicente.pdf';
-    
-    const loadingTask = pdfjsLib.getDocument(url);
-    loadingTask.promise.then(function(pdf) {
-      pdf.getPage(1).then(function(page) {
-        const scale = 1.5;
-        const viewport = page.getViewport({ scale: scale });
-
-        const canvas = document.getElementById('pdf-viewer');
-        const context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        page.render(renderContext);
-      });
-    });
-  </script>
+  <embed src="CV - Gustavo da Costa Vicente.pdf" width="100%" height="100%" type="application/pdf">
 </body>
 </html>
